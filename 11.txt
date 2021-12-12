@@ -1,0 +1,82 @@
+//VISUALIZE
+not_bad:
+Given a string, find the first appearance of the
+substring 'not' and 'bad'. If the 'bad' follows
+the 'not', replace the whole 'not'...'bad' substring
+with 'good'.
+Return the resulting string.
+Input: 'This dinner is not that bad!' 
+Outputs: This dinner is good!
+
+//DECLARE
+Str1 ← String
+badexist,notexist ← Boolean
+notLoc,badLoc ← Integer
+
+//INITIALIZE
+Str1 = ""
+badexist = False
+notexist = False
+notLoc = 0
+badLoc = 0
+
+//INPUT
+INPUT "Enter a string to process" , Str1
+
+//PROCESS
+FOR i = 1 to LEN(Str1)
+  IF MID (Str1,i,3) = "not" 
+    THEN
+      notLock = i
+      notexist = True
+  ENDIF
+  IF MID (Str1,i,3) = "bad" 
+    THEN
+      notLoc = i
+      notexist = True
+  ENDIF
+
+//OUTPUT
+IF badexist and notexist Then
+OUTPUT MID(str1,i,notLoc - 1) & "good")
+
+
+
+
+
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Console.WriteLine("Enter a string to process")
+        Dim str As String = Console.ReadLine
+
+
+        Dim result() As String = Split(str, " ")
+        Dim i As Integer
+        Dim notloc As Integer
+        Dim badloc As Integer
+        Dim notexist As Boolean
+        Dim badexist As Boolean
+
+
+        For i = 1 To Len(str)
+            If Mid(str, i, 3) = "not" Then
+                notloc = i
+                notexist = True
+            End If
+            If Mid(str, i, 3) = "bad" Then
+                badloc = i
+                badexist = True
+            End If
+        Next
+
+        If badexist And notexist Then Console.WriteLine(Mid(str, 1, notloc - 1) & "good")
+        Console.ReadKey()
+
+
+
+    End Sub
+
+End Module

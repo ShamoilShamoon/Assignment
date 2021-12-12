@@ -1,0 +1,100 @@
+//VISUALIZE
+Count and output the NUMBER of an entered character in a string. 
+Also output separate counts for alphabets (cap & small together; case neutral), 
+
+//DECLARE
+Str1,Alphabet,Digits = String
+CountA,CountB,CountC = Integer
+Char1 = Character
+
+//INITIALIZE
+Str1 = "";
+Alphabet = "abcdefghijklmnopqrstuvwxyz";
+Digits = "0123456789";
+Char1 = ''
+ThisChar = ''
+countA = 0
+countB = 0
+countC = 0
+
+//INPUT
+INPUT "Enter a string" , Str1
+      "Enter a character to search" , Char1
+
+
+//PROCESS
+for i = 1 to LEN(Str1)
+	ThisChar = MID(Str1, i, 1)
+        IF ThisChar = Char1
+          THEN
+            CharCount = CharCount + 1
+	ELSE IF LOCATE (Alphabet, Char1) <> 0 
+		countA = countA + 1;
+	ELSE IF LOCATE (Digits, Char) <> 0
+		countB = countB + 1;
+	ELSE
+		countC = countC + 1;
+NEXT i
+EXITFOR
+
+//OUTPUT
+OUTPUT "Number of Entered character in the string" , CharCount
+       "Number of total Characters" , countA
+       "Number of total Digits" , countB
+       "Number of Special Characters" , countC
+
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim Str1 As String = ""
+        Dim Alphabets As String = "abcdefghijklmnopqrstuvwxyz"
+        Dim Digits As String = "0123456789"
+        Dim Char1 As Char = ""
+        Dim CountB As Integer = 0
+        Dim CountA As Integer = 0
+        Dim CountC As Integer = 0
+        Dim CharCount As Integer = 0
+        Dim ThisChar As Char = ""
+
+
+        Console.WriteLine("Enter a string")
+        Str1 = Console.ReadLine()
+        Str1 = LCase(Str1)
+        Console.WriteLine("Enter a character to search")
+        Char1 = Console.ReadLine()
+        Char1 = LCase(Str1)
+
+        For i = 1 To Len(Str1)
+            ThisChar = Mid(Str1, i, 1)
+            If ThisChar = Char1 Then
+                CharCount = CharCount + 1
+            End If
+            If InStr(Alphabets, ThisChar) <> 0 Then
+                CountA = CountA + 1
+            ElseIf InStr(Digits, ThisChar) <> 0 Then
+                CountB = CountB + 1
+            Else
+                CountC = CountC + 1
+            End If
+        Next i
+
+
+        Console.WriteLine("Number of Entered character in the string")
+        Console.WriteLine(CharCount)
+        Console.WriteLine("Number of total Characters")
+        Console.WriteLine(CountA)
+        Console.WriteLine("Number of total Digits")
+        Console.WriteLine(CountB)
+        Console.WriteLine("Number of Special Characters")
+        Console.WriteLine(CountC)
+
+        Console.ReadKey()
+
+
+
+
+    End Sub
+
+End Module

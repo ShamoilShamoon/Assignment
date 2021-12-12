@@ -1,0 +1,53 @@
+//Visualize
+both_ends:
+Input a string s, output a string made of the first 2
+and the last 2 chars of the original string,
+so 'spring' yields 'spng'. However, if the string length
+is less than 2, return string s instead the empty string.
+
+//DECLARE
+s,Str1 : String
+
+//INITIALIZE
+s = ""
+Str1 = ""
+
+//INPUT
+INPUT "Enter a string" , s
+
+//PROCESS
+IF LEN(s) < 2 
+  THEN OUTPUT s
+    ELSE
+      Str1 ← LEFT(s,2) & RIGHT (s,2)
+
+//OUTPUT
+OUTPUT "Your processed string: ' ,Str1
+
+Viisual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim s As String = ""
+        Dim Str1 As String = ""
+
+        Console.WriteLine("Enter a string")
+        s = Console.ReadLine()
+
+        If Len(s) < 2 Then
+            Str1 = s
+        Else
+            Str1 = Left(s, 2) & Right(s, 2)
+        End If
+
+        Console.WriteLine("Your processed string")
+        Console.WriteLine(Str1)
+
+        Console.ReadKey()
+
+
+
+
+    End Sub
+
+End Module

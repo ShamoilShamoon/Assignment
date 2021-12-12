@@ -1,0 +1,105 @@
+//VISUALIZE
+Find the count of vowels characters in an entered string separately
+
+//DECLARE
+Str1 ← String
+Vowel1,Vowel2,Vowel3,Vowel4,Vowel5 ← Character
+aCount,eCount,iCount,oCount,uCount ← Integer
+
+//INITIALIZE
+Str1 = ""
+Vowel1 = 'a'
+Vowel2 = 'e'
+Vowel3 = 'i'
+Vowel4 = 'o'
+Vowel5 = 'u'
+aCount = 0
+eCount = 0
+iCount = 0
+oCount = 0
+uCount = 0
+
+
+//INPUT
+INPUT "Enter a string to process", Str1
+LCase(Str1) ← Str1
+
+//PROCESS
+i = 1 to LEN(Str1)
+  IF MID(Str1,i,1) = Vowel1
+    THEN
+      aCount = aCount + 1
+  ELSE IF MID(Str1,i,1) = Vowel2
+    THEN
+      eCount = eCount + 1
+  ELSE IF MID(Str1,i,1) = Vowel3
+    THEN
+      iCount = iCount + 1
+  ELSE IF MID(Str1,i,1) = Vowel4
+    THEN
+      oCount = oCount + 1
+  ELSE IF MID(Str1,i,1) = Vowel5
+    THEN
+      uCount = uCount + 1
+NEXT i
+  
+//OUTPUT
+OUTPUT "The number of times each vowel occurs:" ,aCount
+                                                ,eCount
+                                                ,iCount
+                                                ,oCount
+                                                ,uCount
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim Str1 As String = ""
+        Dim Vowel1 As Char = "a"
+        Dim Vowel2 As Char = "e"
+        Dim Vowel3 As Char = "i"
+        Dim Vowel4 As Char = "o"
+        Dim Vowel5 As Char = "u"
+        Dim aCount As Integer = 0
+        Dim eCount As Integer = 0
+        Dim iCount As Integer = 0
+        Dim oCount As Integer = 0
+        Dim uCount As Integer = 0
+        Dim i As Integer = 0
+
+        Console.WriteLine("Enter a string to process")
+        Str1 = Console.ReadLine()
+
+        For i = 1 To Len(Str1)
+            If Mid(Str1, i, 1) = Vowel1 Then
+                aCount = aCount + 1
+            ElseIf Mid(Str1, i, 1) = Vowel2 Then
+                eCount = eCount + 1
+            ElseIf Mid(Str1, i, 1) = Vowel3 Then
+                iCount = iCount + 1
+            ElseIf Mid(Str1, i, 1) = Vowel4 Then
+                oCount = oCount + 1
+            ElseIf Mid(Str1, i, 1) = Vowel5 Then
+                uCount = uCount + 1
+            End If
+        Next i
+
+
+        Console.WriteLine("The number of times 'a' occurs")
+        Console.WriteLine(aCount)
+        Console.WriteLine("The number of times 'e' occurs")
+        Console.WriteLine(eCount)
+        Console.WriteLine("The number of times 'i' occurs")
+        Console.WriteLine(iCount)
+        Console.WriteLine("The number of times 'o' occurs")
+        Console.WriteLine(oCount)
+        Console.WriteLine("The number of times 'u' occurs")
+        Console.WriteLine(uCount)
+
+        Console.ReadKey()
+
+
+    End Sub
+
+End Module
+

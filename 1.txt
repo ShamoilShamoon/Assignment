@@ -1,0 +1,72 @@
+//DECLARE
+DECLARE Str1,Str2 : STRING
+DECLARE i : INTEGER
+DECLARE Char1 : CHARACTER
+DEClare AllCharactersPresent : BOOLEAN
+
+//INITIALIZATION
+Str2 ← "abdcefghijklmnopqrstuvwxyz"
+Str1 ← ""
+Char1 ← ''
+i ← 0
+AllCharactersPresent ← FALSE
+
+//INPUT
+INPUT "Enter a String." ← Str1
+Str1 ← Lcase (Str1)
+
+//Process
+FOR i= 1 to Len(Str2)
+   Char1 ← MID(Str2,i,1)
+   IF LOCATE(Str1,Char1) = 0 Then AllCharactersPresent = FALSE
+   IF AllCharactersPresent=False then Exit FOR
+NEXT i
+
+//OUTPUT
+IF AllCharactersPresent = True
+   THEN  
+      OUTPUT "All Characters are present"
+   ELSE
+   OUTPUT " ALL Characters are not present"
+END IF
+
+Module Module1
+
+    Sub Main()
+        Dim Str1, Str2 As String
+        Dim i As Integer = 0
+        Dim Char1 As Char = ""
+        Dim AllCharactersPresent As Boolean = True
+
+        Str2 = "abdcefghijklmnopqrstuvwxyz"
+
+        Console.WriteLine("Enter a String: ")
+        Str1 = Console.ReadLine()
+        Str1 = LCase(Str1)
+
+        For i = 1 To Len(Str2)
+            Char1 = Mid(Str2, i, 1)
+            If InStr(Str1, Char1) = 0 Then
+                AllCharactersPresent = False
+            End If
+            If AllCharactersPresent = False Then
+                Exit For
+            End If
+
+        Next i
+
+        If AllCharactersPresent = True Then
+            Console.WriteLine("All Characters are present")
+        Else
+            Console.WriteLine("All Characters are not present")
+        End If
+
+        Console.ReadKey()
+
+
+    End Sub
+
+End Module
+
+   
+   

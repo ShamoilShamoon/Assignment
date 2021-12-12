@@ -1,0 +1,72 @@
+//VISUALIZE
+fix_start:
+Given a string s, return a string
+where all occurences of its first char have
+been changed to '*', except do not change
+the first char itself.
+e.g., 'babble' yields 'ba*le' or 'alpha' outputs 'alph'
+Assume that the string is length 1 or more
+
+//DECLARE
+s,Str1 : STRING
+ThisChar,FirstChar : CHARACTER
+i : INTEGER
+
+//INITIALIZATION
+s = ""
+Str1 = ""
+ThisChar = ''
+FirstChar = ''
+i = 0 
+ 
+//INPUT
+INPUT "Enter a String." ,s
+
+//PROCESS
+FirstChar ← MID(s,1,1)
+Str1 ← Str1 & FirstChar
+FOR i ← 1 to LEN(s)
+   ThisChar ← MID(s,i,1)
+   IF ThisChar <> FirstChar
+     THEN
+       Str1 ← Str1 & ThisChar
+     ELSE
+       Str1 ← Str1 & '*'
+ENDIF
+NEXT i
+       
+//OUTPUT
+OUTPUT "Processed string :" , Str1
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim s As String = ""
+        Dim Str1 As String = ""
+        Dim ThisChar As Char = ""
+        Dim FirstChar As Char = ""
+        Dim i As Integer = 0
+
+        Console.WriteLine("Enter a string")
+        s = Console.ReadLine()
+
+        FirstChar = Mid(s, 1, 1)
+        Str1 = Str1 & FirstChar
+        For i = 2 To Len(s)
+            ThisChar = Mid(s, i, 1)
+            If ThisChar <> FirstChar Then
+                Str1 = Str1 & ThisChar
+            Else
+                Str1 = Str1 & "*"
+            End If
+        Next
+
+        Console.WriteLine("Your processed String")
+        Console.WriteLine(Str1)
+
+        Console.ReadKey()
+
+    End Sub
+
+End Module

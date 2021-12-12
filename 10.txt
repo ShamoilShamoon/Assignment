@@ -1,0 +1,64 @@
+//Visualize
+verbing:
+Given a string, if its length is at least 3,
+add 'ing' to its end.
+Unless it already ends in 'ing', in which case
+add 'ly' instead.
+If the string length is less than 3, leave it unchanged.
+Return the resulting string.
+examples:
+input 'end' --> 'ending'
+input 'ending' --> 'endingly'
+input 'go' --> 'go'
+
+//DECLARE
+Str1,Str2,Str3 : String
+
+//INITIALIZE
+Str1 = ""
+Str2 = "ing"
+Str3 = "ly"
+
+//INPUT
+INPUT "Enter a string" , Str1
+
+//PROCESS
+IF LEN(Str1) is < 3
+  THEN OUTPUT Str1 
+    ELSE IF RIGHT(Str1,3) <> Str2
+      THEN Str1 ← Str1 & Str2
+    ELSE Str1 ← Str1 & Str3
+END IF
+
+//OUTPUT
+OUTPUT "Your processed string : " ,Str1
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim Str1 As String = ""
+        Dim Str2 As String = "ing"
+        Dim Str3 As String = "ly"
+        Dim Str4 As String = ""
+
+        Console.WriteLine("Enter a string")
+        Str1 = Console.ReadLine()
+
+        If Len(Str1) < 3 Then
+            Str4 = Str1
+        ElseIf Right(Str1, 3) = Str2 Then
+            Str4 = Str1 & Str3
+        Else
+            Str4 = Str1 & Str2
+
+        End If
+
+        Console.WriteLine("Your processed string:")
+        Console.WriteLine(Str4)
+
+        Console.ReadKey()
+
+    End Sub
+
+End Module

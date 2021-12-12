@@ -1,0 +1,69 @@
+//DECLARE
+Str1,Str2 ← String
+Char1,Char2,Char3 ← Character
+i ← Integer
+
+//INITIALIZE
+Str1 = ""
+Str2 = ""
+Char1 = ''
+Char2 = ''
+Char3 = ''
+i = 0
+
+//INPUT
+INPUT "Enter a String." , Str1
+INPUT "Enter a Character to be replaced" , Char1 
+INPUT "Enter a Character to replace with" , Char2
+
+//PROCESS
+FOR i ← 1 to LEN(Str1)
+   Char3 ← MID (Str1,i,1)  
+   IF Char3 = Char1
+      THEN
+        Str2 ← Str2 & Char2
+      ELSE
+        Str2 ← Str2 & Char3
+   END IF
+NEXT i
+
+//OUTPUT
+OUTPUT "String after replacements" , Str2
+
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim Str1 As String = ""
+        Dim Str2 As String = ""
+        Dim Char1 As Char = ""
+        Dim Char2 As Char = ""
+        Dim Char3 As Char = ""
+        Dim i As Integer = 0
+
+        Console.WriteLine("Enter a String:")
+        Str1 = Console.ReadLine()
+        Console.WriteLine("Enter a Character to be replaced:")
+        Char1 = Console.ReadLine
+        Console.WriteLine("Enter a Character to replace with:")
+        Char2 = Console.ReadLine()
+
+        For i = 1 To Len(Str1)
+            Char3 = Mid(Str1, i, 1)
+            If Char3 = Char1 Then
+                Str2 = Str2 & Char2
+            Else
+                Str2 = Str2 & Char3
+            End If
+        Next i
+
+        Console.WriteLine("String after replacements:")
+        Console.Write(Str2)
+        Console.ReadKey()
+
+
+
+    End Sub
+
+End Module

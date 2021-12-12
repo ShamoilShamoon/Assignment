@@ -1,0 +1,63 @@
+//Visualize
+MixUp:
+Given strings a and b, return a single string with a and b separated
+by a space '<a> <b>', except swap the first 2 chars of each string.
+e.g.
+  'mix', pod' -> 'pox mid'
+  'dog', 'dinner' -> 'dig donner'
+  Assume a and b are length 2 or more.
+
+//DECLARE
+Str1,Str2,Str3,Str4,Str5 ← String
+
+//INITIALIZE
+Str1 = ""
+Str2 = ""
+Str3 = ""
+Str4 = ""
+Str5 = ""
+Str6 = ""
+Str7 = ""
+
+//INPUT
+INPUT "Enter a string to process" , Str1
+      "Enter a string to process" , Str2
+
+//PROCESS
+Str3 ← MID(Str1,1,2)
+Str4 ← MID(Str2,1,2)
+Str5 ← Right(str1, Len(str1) - 2)
+Str6 ← Right(str2, Len(str2) - 2)
+
+Str7 ← Str1 & ' ' & Str2
+
+//OUTPUT
+OUTPUT "Your processed string:" ,Str5
+
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim str1 As String
+        Dim str2 As String
+        Console.WriteLine("Enter string 1")
+        str1 = Console.ReadLine()
+        Console.WriteLine("Enter string 2")
+        str2 = Console.ReadLine()
+
+
+
+        Dim substring1 As String = Left(str1, 2)
+        Dim substring2 As String = Left(str2, 2)
+        Dim substringlast1 As String = Right(str1, Len(str1) - 2)
+        Dim substringlast2 As String = Right(str2, Len(str2) - 2)
+        Dim newstr1 As String = substring2 + substringlast1
+        Dim newstr2 As String = substring1 + substringlast2
+        Dim finalstr As String = newstr1 + " " + newstr2
+        Console.WriteLine(finalstr)
+        Console.ReadKey()
+    End Sub
+
+End Module
+

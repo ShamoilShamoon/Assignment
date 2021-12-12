@@ -1,0 +1,60 @@
+//VISUALIZE
+donuts:
+INPUT an INT count of a number of donuts, OUTPUT a string
+of the form 'Number of donuts: <count>', where <count> is the number
+input. However, if the count is 10 or more, then use the word 'many'
+instead of the actual count.
+So donuts(5) outputs 'Number of donuts: 5'
+and donuts(23) outputs 'Number of donuts: many'
+
+//DECLARE
+Str1 ← String
+Number ← Integer
+
+//INITIALIZE
+Str1 = "Number of donuts:"
+Number = 0
+
+//INPUT
+INPUT "Enter a number of donuts" , Number
+
+//PROCESS
+IF Number > 9
+  THEN 
+    Str1 ← Str1 & many
+  ELSE
+    Str1 ← Str1 & Number
+    
+//OUTPUT
+OUTPUT Str1
+
+
+Visual Basic Code
+Module Module1
+
+    Sub Main()
+        Dim Str1 As String = "Number of donuts:"
+        Dim Number As Integer = 0
+
+        Console.WriteLine("Enter the number of donut")
+        Number = Console.ReadLine()
+
+        If Number > 9 Then
+            Str1 = Str1 & "many"
+
+        Else
+            Str1 = Str1 & Number
+        End If
+
+        Console.WriteLine(Str1)
+
+        Console.ReadKey()
+
+
+
+
+
+    End Sub
+
+End Module
+
